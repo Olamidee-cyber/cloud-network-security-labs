@@ -1,18 +1,18 @@
-# 🌐 Cloud, Networking & Security Labs
+#  Cloud, Networking & Security Labs
 
 Hands-on labs to sharpen my skills in cloud computing, network engineering, and cybersecurity. Built for real-world practice and portfolio showcasing.
 
 ---
 
-## 🗂️ Lab Index
+##  Lab Index
 
 | Week | Lab Title                  | Focus Area              |
 |------|----------------------------|-------------------------|
-| 1    | 🔐 S3 Bucket Breach Lab     | Cloud Security (AWS + IAM) |
-| 2    | 🏰 Cloud Fortress VPC        | AWS Networking + Security |
-| 3    | 🧠 IAM Policy Analyzer       | IAM + Python Scripting |
-| 4    | 🔎 Network Recon with Wireshark | Nmap + Wireshark |
-| 5    | 🏢 Active Directory Lab      | Microsoft AD + Internal Security |
+| 1    |  S3 Bucket Breach Lab     | Cloud Security (AWS + IAM) |
+| 2    |  Cloud Fortress VPC        | AWS Networking + Security |
+| 3    |  IAM Policy Analyzer       | IAM + Python Scripting |
+| 4    |  Network Recon with Wireshark | Nmap + Wireshark |
+| 5    |  Active Directory Lab      | Microsoft AD + Internal Security |
 
 ---
 
@@ -26,12 +26,12 @@ Hands-on labs to sharpen my skills in cloud computing, network engineering, and 
 
 ---
 
-## 🧠 Project Goals
+##  Project Goals
 
-- 🧪 Simulate real-world misconfigurations & attacks
-- 🔐 Practice cloud-native security hardening
-- 📈 Build a GitHub-ready portfolio
-- 💼 Stand out for roles in cloud, security, and infrastructure
+-  Simulate real-world misconfigurations & attacks
+-  Practice cloud-native security hardening
+-  Build a GitHub-ready portfolio
+-  Stand out for roles in cloud, security, and infrastructure
 
 ---
 
