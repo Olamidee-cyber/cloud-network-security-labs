@@ -1,4 +1,4 @@
-# 🏰 Cloud Fortress EC2 Lab
+#  Cloud Fortress EC2 Lab
 
 This lab launches a secure EC2 web server in a public subnet, installs Apache, sets up a custom HTML message, and verifies access via the public IP.
 
