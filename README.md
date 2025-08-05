@@ -62,8 +62,8 @@ cloud-network-security-labs/
 
 ---
 
-## 🗣️ Author
+##  Author
 
-**Olamide Adenuga**  
+**Samuel Adenuga**  
 Cloud, Network & Security Enthusiast  
 GitHub: [@Olamidee-cyber](https://github.com/Olamidee-cyber)
