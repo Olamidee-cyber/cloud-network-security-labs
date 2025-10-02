@@ -5,7 +5,7 @@ variable "aws_region" {
 }
 
 variable "project" {
-  type        = string
-  default     = "serverless-todo"
+  type    = string
+  default = "serverless-todo"
 }
 

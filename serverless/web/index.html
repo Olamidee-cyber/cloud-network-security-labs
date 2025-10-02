@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Serverless Todo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: system-ui, Arial; max-width: 720px; margin: 2rem auto; }
+    input, button { padding: .6rem; margin: .2rem; }
+    pre { background:#111; color:#eee; padding:1rem; overflow:auto; }
+  </style>
+</head>
+<body>
+  <h1>Serverless Todo</h1>
+
+  <label>API Base URL:
+    <input id="api" size="70" placeholder="https://xxxx.execute-api.us-east-1.amazonaws.com" />
+  </label>
+  <button id="btnPing">/health</button>
+
+  <h2>Create</h2>
+  <input id="task" placeholder="task" />
+  <input id="priority" placeholder="priority" value="medium" />
+  <button id="btnCreate">POST /items</button>
+
+  <h2>Read / Update / Delete</h2>
+  <input id="id" size="40" placeholder="item id" />
+  <button id="btnGet">GET</button>
+  <button id="btnUpdate">PUT</button>
+  <button id="btnDelete">DELETE</button>
+
+  <h2>Output</h2>
+  <pre id="out"></pre>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const out = (x) => ($("out").textContent = typeof x === "string" ? x : JSON.stringify(x, null, 2));
+
+async function call(method, path, body) {
+  const base = $("api").value.trim().replace(/\/+$/, "");
+  const res = await fetch(base + path, {
+    method, headers: {"Content-Type":"application/json"},
+    body: body ? JSON.stringify(body) : undefined
+  });
+  const text = await res.text();
+  try { return {status: res.status, json: JSON.parse(text)}; } catch { return {status: res.status, text}; }
+}
+
+$("btnPing").onclick = async () => out(await call("GET", "/health"));
+$("btnCreate").onclick = async () => {
+  const r = await call("POST", "/items", {task:$("task").value, priority:$("priority").value});
+  if (r.json && r.json.id) $("id").value = r.json.id;
+  out(r);
+};
+$("btnGet").onclick    = async () => out(await call("GET", `/items/${$("id").value}`));
+$("btnUpdate").onclick = async () => out(await call("PUT", `/items/${$("id").value}`, {task:$("task").value, priority:$("priority").value, tag:"updated"}));
+$("btnDelete").onclick = async () => out(await call("DELETE", `/items/${$("id").value}`));
+</script>
+</body>
+</html>
