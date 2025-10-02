@@ -5,3 +5,14 @@ terraform.tfstate*
 __pycache__/
 .env
 
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# Lambda build artifacts
+*.zip
+__pycache__/
+*.pyc
+.env
